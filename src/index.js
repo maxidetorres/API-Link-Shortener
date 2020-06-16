@@ -11,6 +11,9 @@ app.use(function (req, res, next) {
   next()
 })
 
+// Le indicamos a Mongoose que haremos la conexión con Promesas
+mongoose.Promise = global.Promise;
+
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true );
 
