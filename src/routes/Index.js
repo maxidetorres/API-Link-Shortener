@@ -1,7 +1,6 @@
-const express = require('express');
+const express = require('express')
 const router = express.Router()
 
-//router.use('/',//nombre de la ruta//)
+// router.use('/',//nombre de la ruta//)
 
-
-module.exports = router;
+module.exports = router
