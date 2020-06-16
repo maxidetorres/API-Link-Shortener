@@ -1,7 +1,7 @@
 {
   "name": "api-link-shortener",
   "version": "1.0.0",
-  "description": "Backend de servicios para crear recortar url. ",
+  "description": "Backend de servicios para crear url's más cortas. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
