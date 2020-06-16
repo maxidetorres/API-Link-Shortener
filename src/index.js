@@ -1,9 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const mongoClient = require('mongodb').MongoClient;
-// const routes = require('./routes')
+const routes = require('./routes')
 
 const app = express()
+
 
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
@@ -39,7 +40,7 @@ mongoose.connect(`mongodb://${mongoHost}:${mongoPort}/API-Link-Shortener`)
 
 app.use(express.json())
 
-// app.use('/', routes)
+app.use('/', routes)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
