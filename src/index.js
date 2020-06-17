@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes')
 const initializer = require('./models/initializer')
-const bodyParser = require("body-parser")
+const bodyParser = require('body-parser')
 
 const app = express()
 
@@ -48,8 +48,6 @@ mongoose.connect(`mongodb://${mongoHost}:${mongoPort}/${mongoDB}`)
 app.use(express.json())
 
 app.use('/', routes)
-require('./routes/auth.routes')(app)
-require('./routes/user.routes')(app)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {

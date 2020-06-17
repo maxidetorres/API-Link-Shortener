@@ -1,6 +1,6 @@
 const Role = require('./role.model')
 const initializer = {}
-initializer.initial =()=> {
+initializer.initial = () => {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new Role({
