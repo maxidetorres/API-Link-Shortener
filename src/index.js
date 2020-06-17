@@ -48,8 +48,6 @@ mongoose.connect(`mongodb://${mongoHost}:${mongoPort}/${mongoDB}`)
 app.use(express.json())
 
 app.use('/', routes)
-require('./routes/auth.routes')(app)
-require('./routes/user.routes')(app)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
