@@ -11,3 +11,7 @@ exports.createUrlShortener = async (req, res) => {
   }
   return await urlShortenerService.createUrlShortener(req.body, res)
 }
+
+exports.redirectShortLink = async (req, res) => {
+  return await urlShortenerService.redirectTo(req, res)
+}

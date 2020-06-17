@@ -39,3 +39,20 @@ exports.createUrlShortener = async (req, res) => {
     return res.status(400).json({ message: e.message })
   }
 }
+
+exports.redirectTo = async (req, res) => {
+  Url.findOne({ urlCode: req.params.urlCode })
+    .then(URL => {
+      if (!URL) {
+        return res.status(404).send({
+          message: 'Url not found'
+        })
+      }
+
+      res.redirect(307, URL.originalUrl)
+    })/* .catch(err => {
+      return res.status(500).send({
+        message: 'Url fail'
+      })
+    }) */
+}
