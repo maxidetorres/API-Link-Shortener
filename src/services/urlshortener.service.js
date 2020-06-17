@@ -1,7 +1,7 @@
 const Url = require('../models/urlshortener.model')
 const nanoid = require('nanoid')
 
-exports.createUrlShortenerServ = async (req) => {
+exports.createUrlShortener = async (req) => {
   try {
     const { originalUrl, shortBaseUrl } = req
     const urlCode = nanoid.nanoid()

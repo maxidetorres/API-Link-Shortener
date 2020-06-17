@@ -1,4 +1,3 @@
-
 const validUrl = require('valid-url')
 const urlShortenerService = require('../services/urlshortener.service')
 
@@ -11,6 +10,6 @@ exports.createUrlShortener = async (req, res) => {
     return res.status(401).json('Invalid Original Url.')
   }
 
-  const objectUrl = await urlShortenerService.createUrlShortenerServ(req.body)
+  const objectUrl = await urlShortenerService.createUrlShortener(req.body)
   return res.status(200).json(objectUrl)
 }
