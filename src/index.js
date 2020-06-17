@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes')
 const initializer = require('./models/initializer')
-const bodyParser = require("body-parser")
+const bodyParser = require('body-parser')
 
 const app = express()
 
