@@ -1,5 +1,5 @@
-import { Schema as _Schema, model } from 'mongoose'
-const { Schema } = _Schema
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const UrlSchema = new Schema({
   originalUrl: { type: String, required: true },
@@ -7,5 +7,4 @@ const UrlSchema = new Schema({
   shortUrl: { type: String, required: true }
   //  expireAt:{type: Date, expires: 1200, default: Date.now}
 })
-
-export default model('Url', UrlSchema)
+module.exports = mongoose.model('Url', UrlSchema)
