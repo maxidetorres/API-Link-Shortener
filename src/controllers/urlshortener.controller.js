@@ -10,6 +10,7 @@ exports.createUrlShortener = async (req, res) => {
     return res.status(401).json('Invalid Original Url.')
   }
 
-  const objectUrl = await urlShortenerService.createUrlShortener(req.body)
-  return res.status(200).json(objectUrl)
+  //const objectUrl = await urlShortenerService.createUrlShortener(req.body, res)
+  //return objectUrl
+  return await urlShortenerService.createUrlShortener(req.body, res)
 }
