@@ -1,0 +1,22 @@
+
+services:
+    api-link-shortener:
+        build: ../API-Link-Shortener
+        container_name: "api-link-shortener"
+        environment:
+        - MONGOHOST=link-shortener-mongo
+        ports:
+        - 3000:3000
+        depends_on:
+        - link-shortener-mongo
+
+    
+    link-shortener-mongo:
+        image: mongo:latest
+        container_name: link-shortener-mongo
+        ports:
+            - 27017:27017
+        volumes:
+            - mongo-db:/data/db
+volumes:
+    mongo-db:
