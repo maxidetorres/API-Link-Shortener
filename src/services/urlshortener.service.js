@@ -50,9 +50,9 @@ exports.redirectTo = async (req, res) => {
       }
 
       res.redirect(307, URL.originalUrl)
-    })/* .catch(err => {
+    }).catch(_ => {
       return res.status(500).send({
         message: 'Url fail'
       })
-    }) */
+    })
 }

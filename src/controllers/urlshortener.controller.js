@@ -3,6 +3,7 @@ const urlShortenerService = require('../services/urlshortener.service')
 
 exports.createUrlShortener = async (req, res) => {
   const { shortBaseUrl, originalUrl } = req.body
+
   if (!validUrl.isUri(shortBaseUrl)) {
     return res.status(400).json({ message: 'Invalid Base Url format' })
   }
